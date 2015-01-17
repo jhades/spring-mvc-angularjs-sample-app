@@ -1,6 +1,6 @@
 # Spring MVC | AngularJs Sample App #
 
-A test project to demonstrate how a web app can be built using Spring MVC / AngularJs. 
+A test project to demonstrate how a web app can be built using Spring MVC / AngularJs. The frontend is based on Angular, lodash and requirejs, and the backend is composed of JSON REST web services based on Spring MVC / JPA.
 
 ### How to run the App ###
 
