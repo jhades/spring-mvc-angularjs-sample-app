@@ -1,14 +1,14 @@
 # Spring MVC | AngularJs Sample App #
 
-A test project for a daily calories consumption tracker. The project can be run with two different profiles, one using a postgresql database and the other is a test mode that starts an in-memory database and fills it with some test data. 
+A test project to demonstrate how a web app can be built using Spring MVC / AngularJs. 
 
-### How to run the project in test mode ###
+### How to run the App ###
 
 After cloning the repository, run the following command on the root folder of the repository:
 
     mvn clean install tomcat7:run-war -Dspring.profiles.active=test
 
-After the server starts, the application is accessible at the following URL:
+The spring test profile will activate an in-memory database. After the server starts, the application is accessible at the following URL:
 
     http://localhost:8080/
 
@@ -18,7 +18,7 @@ To see a user with existing data (16 meals, 8 days from 1st of January 2015 to t
 
 This is how the application looks like after login:
 
-![alt Calories Tracker](TODO)
+![alt Calories Tracker](http://d2huq83j2o5dyd.cloudfront.net/sample-app.png)
 
 ### Frontend Overview ###
 
