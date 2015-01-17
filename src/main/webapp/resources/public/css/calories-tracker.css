@@ -1,0 +1,402 @@
+
+header.page-header {
+    background: #2d3e50;
+    color: #eee;
+}
+
+span.page-title {
+    margin-left: 0.4em;
+    font-size: 137%;
+    vertical-align: top;
+}
+
+.logo {
+    height: 3.1em;
+    padding: 0.1em;
+    margin-top: 0.5em;
+    margin-left: 0.3em;
+    margin-bottom: 0.25em;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.header-element {
+    display: inline-block;
+    vertical-align: top;
+    height: 68px;
+    line-height: 68px;
+
+}
+
+.today-calories-container {
+    position: relative;
+    height: 68px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.today-calories {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    display: inline-block;
+    vertical-align: top;
+    height: 1.2em;
+    margin-left: 1em;
+    min-width: 11em;
+    padding: 0.4em 0 0.4em 0;
+    text-align: center;
+    width: 10%;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 2px solid white;
+    background: white;
+    color: #000000;
+}
+
+.today-calories-placeholder {
+    width: 26px;
+    display: inline-block;
+}
+
+.today-calories.cal-limit-ok {
+    color: #eee;
+    border: 2px solid darkgreen;
+    background: green;
+}
+
+.today-calories.cal-limit-nok {
+    color: #eee;
+    border: 2px solid darkred;
+    background: firebrick;
+}
+
+.max-cal {
+    max-width: 5em;
+    height: 1.1em;
+    border-radius: 3px;
+    margin-left: 0.2em;
+    font-size: 90%;
+}
+
+.username {
+    font-size: 85%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.username-placeholder {
+    width: 100px;
+    display: inline-block;
+}
+
+a.logout {
+    color: #eee;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+a.logout:hover {
+    color: #3b67a7;
+}
+
+.container {
+    margin: 0 0.6em;
+}
+
+@media screen and (min-width: 48em) {
+    .container {
+        max-width: 48em;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 14em) {
+    .login-container {
+        max-width: 14em;
+        margin: 0 auto;
+    }
+}
+
+.pure-skin-theme .pure-form.search-form,
+.pure-skin-theme .pure-form.login-form {
+    margin-top: 0.3em;
+}
+
+.pure-skin-theme .pure-form.login-form input {
+    margin-bottom: 0.17em;
+}
+
+.pure-skin-theme .pure-form.search-form .search-button {
+    vertical-align: middle;
+    font-size: 85%;
+}
+
+.pure-skin-theme .pure-form button.search-button[type="submit"] {
+    margin-top: 1em;
+}
+
+@media screen and (min-width: 35.5em) {
+    .pure-skin-theme .pure-form .from-to-time {
+        margin-top: 0.7em;
+    }
+}
+
+.meals-list {
+    margin-top: 2em;
+}
+
+.table-buttons {
+    margin-bottom: 0.4em;
+}
+
+.pure-skin-theme .table-buttons button {
+    font-size: 85%;
+}
+
+.meals-list table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 95%;
+}
+
+.pure-skin-theme .meals-list table input[type="text"] {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.meals-list table .selection-column {
+    width: 1em;
+}
+
+.meals-list table td {
+    cursor: pointer;
+}
+
+.pure-skin-theme .meals-list table td.editable-cell {
+    padding: 0;
+}
+
+.pure-skin-theme .meals-list table td.editable-cell .edit-widget {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.pure-skin-theme .pure-form .meals-list table input[type="text"] {
+    width: 100%;
+    height: 21px;
+    max-width: none;
+    max-height: none;
+}
+
+.search-form-content {
+    margin-top: 0.2em;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* if its at least sm */
+@media screen and (min-width: 35.5em) {
+    .search-form-content {
+        max-width: 28em;
+    }
+}
+
+.new-user-link {
+    float: right;
+    display: inline-block;
+    margin-top: 0.5em;
+    font-size: 80%;
+}
+
+.error-messages {
+    color: #e9322d;
+    font-size: 0.75em;
+}
+
+.form-field {
+    height: 3.35em;
+}
+
+.last-form-field {
+    height: 2.6em;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.utilities {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 64em) {
+    .utilities {
+        text-align: right;
+        margin-left: auto;
+        margin-bottom: auto;
+    }
+}
+
+.main-controls {
+    margin-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.pure-skin-theme .main-controls button {
+    margin-right: 0.5em;
+}
+
+.form-separator {
+    margin-top: 1em;
+    border-top: 1px solid #ededed;
+}
+
+.pure-skin-theme .pure-form.search-form input {
+    max-width: 153px;
+    max-height: 29px;
+    font-size: 90%;
+}
+
+@media screen and (max-width: 650px) {
+    .search-form-content label {
+        display: block;
+    }
+
+    .search-form-content {
+        max-width: 32em;
+    }
+
+    .search-form-content .search {
+        width: 50%;
+        margin-top: 0.5em;
+    }
+
+}
+
+.pure-skin-theme .pure-paginator.paginator {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.pure-skin-theme .pure-paginator.paginator .pure-button {
+    font-size: 88%;
+    padding: 0.4em 0.95em;
+}
+
+.form-messages {
+    margin-top: 1em;
+    font-size: 0.9em;
+    border-radius: 4px;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+}
+
+.form-messages.errors {
+    color: #e9322d;
+    background-color: #fbe8e5;
+}
+
+.form-messages.errors.access-screen {
+    background-color: white;
+}
+
+.messages-group {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0.3em;
+}
+
+.access-screen  {
+    max-width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.88em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.error-icon, .info-icon {
+    margin-left: 0.8em;
+    display: inline-block;
+    height: 25px;
+}
+
+.not-ready {
+    opacity: 0.5;
+}
+
+.pure-skin-theme .app-ready {
+    opacity: 1;
+}
+
+.pure-skin-theme .please-wait-dialog,
+.pure-skin-theme .info-messages {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    margin: 0 auto;
+    z-index: 2000;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: 0.1s ease-in-out -webkit-opacity;
+    -moz-transition: 0.1s ease-in-out -moz-opacity;
+    -ms-transition: 0.1s ease-in-out opacity;
+    -o-transition: 0.1s ease-in-out opacity;
+    transition: 0.1s ease-in-out opacity;
+    transition-delay: 0s;
+}
+
+.pure-skin-theme .please-wait-dialog {
+    background: #e1eefa;
+    text-align: center;
+    width: 350px;
+    height: 140px;
+    margin-left: -175px;
+    margin-top: -70px;
+}
+
+.info-icon {
+    margin-top: 0.1em;
+    margin-left: 1.2em;
+}
+
+.pure-skin-theme .please-wait-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -24px;
+    margin-left: -24px;
+}
+
+.pure-skin-theme .info-messages {
+    color: #3b67a7;
+    background-color: #d0eaff;
+    width: 300px;
+    height: 100px;
+    margin-left: -150px;
+    margin-top: -50px;
+    padding-top: 1em;
+    z-index: -10;
+}
+
+
+@media screen and (max-width: 585px) {
+    .today-calories-container {
+        display: block;
+    }
+}
+
+
+
+

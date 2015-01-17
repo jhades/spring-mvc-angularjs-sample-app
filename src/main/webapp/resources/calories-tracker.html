@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calories Tracker</title>
+    <link rel="stylesheet" href="/resources/bower_components/pure/pure.css">
+    <link rel="stylesheet" href="/resources/bower_components/pure/grids-responsive.css">
+    <link rel="stylesheet" href="/resources/public/css/pure-theme.css">
+    <link rel="stylesheet" href="/resources/public/css/calories-tracker.css">
+    <link rel="stylesheet" href="/resources/css/jquery.datetimepicker.css">
+</head>
+<body class="pure-skin-theme" id="caloriesCounterApp" ng-controller="CaloriesTrackerCtrl">
+
+<div class="please-wait-dialog" ng-hide="vm.appReady">
+    <img class="please-wait-spinner" src="/resources/img/loading.gif">
+</div>
+
+<header class="page-header pure-g not-ready" ng-class="{'app-ready': vm.appReady}">
+    <div class="pure-u-lg-1-2 pure-u-1">
+
+        <a class="pure-menu-heading" href="#">
+            <img class="logo" src="/resources/img/logo.png">
+        </a>
+        <span class="header-element page-title">Calories Tracker</span>
+
+        <div class="today-calories-container">
+            <div class="today-calories {{vm.caloriesStatusStyle}}">
+                Today' calories:
+                <div class="today-calories-placeholder" ng-hide="vm.todaysCalories"></div>
+                <span ng-cloak>{{vm.todaysCalories}}</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="pure-u-lg-1-2 pure-u-1 utilities">
+        <div class="header-element">
+            Max. calories
+            <input tabindex="10" class="max-cal" type="number" ng-model="vm.maxCaloriesPerDay"
+                   ng-model-options="{'updateOn':'blur'}" ng-blur="updateMaxCaloriesPerDay()">
+        </div>
+        <div class="header-element username">
+            <div class="username-placeholder" ng-hide="vm.userName"></div>
+            <span ng-cloak>{{vm.userName}}</span>
+        </div>
+        <div class="header-element">
+            <a class="logout" href="#" ng-click="logout()">Logout</a>
+        </div>
+    </div>
+</header>
+
+<main class="container not-ready" ng-class="{'app-ready': vm.appReady}" ng-cloak>
+
+    <tt-error-messages></tt-error-messages>
+
+    <div class="info-messages"
+         ng-style="{'opacity': vm.infoMessages.length > 0 ? 1 : 0, 'z-index': vm.infoMessages.length > 0 ? 10 : -10}">
+    <img class="info-icon" src="/resources/img/info-icon.png">
+        <div class="messages-group">
+            <div ng-repeat="info in vm.infoMessages">{{info.description}}</div>
+        </div>
+    </div>
+
+    <form class="pure-form pure-form-aligned search-form">
+        <fieldset>
+            <legend>Search</legend>
+
+            <div class="pure-g pure-form-stacked search-form-content">
+
+                <div class="pure-u-sm-1-2 pure-u-1 from-field">
+                    <label>From Date </label>
+                    <input tt-date-picker name="fromDate" ng-model="vm.fromDate">
+                </div>
+
+                <div class="pure-u-sm-1-2 pure-u-1 to-field">
+                    <label>To Date</label>
+                    <input tt-date-picker name="toDate" ng-model="vm.toDate">
+                </div>
+
+                <div class="pure-u-sm-1-2 pure-u-1 from-field from-to-time">
+                    <label>From Time</label>
+                    <input tt-time-picker name="fromTime" ng-model="vm.fromTime">
+                </div>
+
+                <div class="pure-u-sm-1-2 pure-u-1 to-field from-to-time">
+                    <label>To Time</label>
+                    <input tt-time-picker name="toTime" ng-model="vm.toTime">
+                </div>
+
+                <div class="pure-u-1 search">
+                    <button type="submit" ng-click="search()"
+                            class="pure-button pure-button-primary search-button">Search
+                    </button>
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="meals-list">
+
+            <div class="table-buttons">
+                <button type="submit" class="pure-button" ng-click="add()">Add</button>
+                <button type="submit" class="pure-button" ng-click="delete()" ng-disabled="vm.isSelectionEmpty"
+                        disabled>Delete
+                </button>
+            </div>
+
+            <table class="pure-table">
+                <thead>
+                <tr>
+                    <th class="selection-column"></th>
+                    <th>Date/Time</th>
+                    <th>Description</th>
+                    <th>Total Calories</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr ng-repeat="meal in vm.meals | excludeDeleted | limitTo : 10" tt-editable-row rowValue="meal"
+                    ng-class="{'pure-table-odd': $index % 2 == 1, 'pure-table-even': $index % 2 == 0}">
+
+                    <td class="selection-column">
+                        <input type="checkbox" ng-model="meal.selected" ng-click="selectionChanged()">
+                    </td>
+
+                    <td tt-editable-cell value="meal.datetime" is-new="meal.new">
+                        <input tt-date-time-picker tt-cell-field type="text"
+                               ng-model="meal.datetime">
+                    </td>
+
+                    <td tt-editable-cell value="meal.description" is-new="meal.new">
+                        <input type="text" tt-cell-field ng-model="meal.description">
+                    </td>
+
+                    <td tt-editable-cell value="meal.calories" is-new="meal.new">
+                        <input type="text" tt-cell-field tt-numeric-field ng-model="meal.calories">
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+
+            <ul class="pure-paginator paginator">
+                <li>
+                    <a ng-enabled="vm.totalPages > 0" class="pure-button prev" ng-click="previous()"
+                       ng-disabled="vm.currentPage == 1">&#171;</a>
+                </li>
+
+                <li ng-repeat="page in pages()">
+                    <a ng-enabled="vm.totalPages > 0" class="pure-button" ng-click="goToPage($index + 1)"
+                       ng-class="{'pure-button-active': page == vm.currentPage}">{{page}}</a></li>
+
+                <li>
+                    <a ng-enabled="vm.totalPages > 0" ng-disabled="vm.currentPage == vm.totalPages"
+                       class="pure-button next" ng-click="next()">&#187;</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </form>
+
+    <div class="form-separator"></div>
+
+    <div class="main-controls">
+        <button type="submit" class="pure-button pure-button-primary" ng-click="save()">Save</button>
+        <button type="reset" class="pure-button" ng-click="reset()">Reset</button>
+    </div>
+
+</main>
+
+<script type="text/javascript" data-main="/resources/js/run-calories-tracker"
+        src="/resources/bower_components/requirejs/require.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- Appenders -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="calories.tracker.app">
+        <level value="info"/>
+    </logger>
+
+    <logger name="org.springframework.core">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="org.springframework.beans">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="org.springframework.context">
+        <level value="error"/>
+    </logger>
+
+    <logger name="org.springframework.http">
+        <level value="error"/>
+    </logger>
+
+    <logger name="org.springframework.web">
+        <level value="error"/>
+    </logger>
+
+    <logger name="org.springframework.security">
+        <level value="error"/>
+    </logger>
+
+    <logger name="org.postgresql">
+        <level value="info"/>
+    </logger>
+
+    <logger name="org.hibernate">
+        <level value="error"/>
+    </logger>
+
+    <logger name="org.hibernate.type">
+        <level value="error"/>
+    </logger>
+
+    <root>
+        <priority value="warn"/>
+        <appender-ref ref="console"/>
+    </root>
+
+</log4j:configuration>

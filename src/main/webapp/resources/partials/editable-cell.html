@@ -1,0 +1,10 @@
+<td class="editable-cell">
+    <div ng-hide="cellState.editMode || isNew" ng-click="edit()" class="edit-widget cell-description" >
+        {{value}}
+    </div>
+    <div ng-show="cellState.editMode || isNew" ng-cloak>
+        <div class="edit-widget" ng-transclude>
+
+        </div>
+    </div>
+</td>
