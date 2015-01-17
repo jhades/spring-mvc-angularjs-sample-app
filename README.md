@@ -16,10 +16,6 @@ To see a user with existing data (16 meals, 8 days from 1st of January 2015 to t
 
     username: test123 / password: Password2
 
-This is how the application looks like after login:
-
-![alt Calories Tracker](http://d2huq83j2o5dyd.cloudfront.net/sample-app.png)
-
 ### Frontend Overview ###
 
 The test project is a web application with an AngularJs-based frontend and a Spring/Hibernate based backend. The application is responsive, as it adapts to different screen sizes.
