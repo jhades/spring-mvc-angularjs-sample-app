@@ -13,7 +13,7 @@ The following dependencies are necessary:
 
 ### Installing frontend dependencies ###
 
-After cloning the repository, , this command installs the Javascript dependencies:
+After cloning the repository, the following command installs the Javascript dependencies:
 
     bower install
 
