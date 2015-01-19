@@ -4,7 +4,12 @@ A test project to demonstrate how a web app can be built using Spring MVC / Angu
 
 ### Installation dependencies ###
 
-The following dependencies are necessary: Java 8, Node 0.10, bower, maven 3
+The following dependencies are necessary: 
+
+ - Java 8
+ - Node 0.10
+ - bower
+ - maven 3
 
 ### Installing frontend dependencies ###
 
