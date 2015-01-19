@@ -2,9 +2,19 @@
 
 A test project to demonstrate how a web app can be built using Spring MVC / AngularJs. The frontend is based on Angular, lodash and requirejs, and the backend is composed of JSON REST web services based on Spring MVC / JPA, secured with Spring Security.
 
-### How to run the App ###
+### Installation dependencies ###
 
-After cloning the repository, run the following command on the root folder of the repository:
+The following dependencies are necessary: Java 8, Node 0.10, bower, maven 3
+
+### Installing frontend dependencies ###
+
+After cloning the repository, , this command installs the Javascript dependencies:
+
+    bower install
+
+### How to build and run the App ###
+
+To build the backend and start the server, run the following command on the root folder of the repository:
 
     mvn clean install tomcat7:run-war -Dspring.profiles.active=test
 
