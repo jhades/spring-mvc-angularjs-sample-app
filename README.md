@@ -17,7 +17,7 @@ After cloning the repository, the following command installs the Javascript depe
 
     bower install
 
-### How to build and run the App ###
+### Building and starting the server ###
 
 To build the backend and start the server, run the following command on the root folder of the repository:
 
