@@ -33,7 +33,7 @@ To see a user with existing data (16 meals, 8 days from 1st of January 2015 to t
 
 ### Frontend Overview ###
 
-The test project is a web application with an AngularJs-based frontend and a Spring/Hibernate based backend. The application is responsive, as it adapts to different screen sizes.
+The sample project is a web application with an AngularJs-based frontend and a Spring/Hibernate based backend. The application is responsive, as it adapts to different screen sizes.
 
 On the frontend, these libraries where used (besides Angular):  [Yahoo PureCss](http://http://purecss.io/) (pure CSS baseline)  and [lodash](https://lodash.com/) for functional data manipulation. The module system [require.js](http://requirejs.org/) was used to load frontend dependencies. The dependencies where  obtained via [bower](http://bower.io/).
 
