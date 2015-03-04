@@ -94,6 +94,13 @@ This snapshot shows the test code coverage for the app package:
 
 ![alt Calories Tracker test Code Coverage](http://d2huq83j2o5dyd.cloudfront.net/CodeCoverage.png)
 
+## Installation instructions
+
+Clone this repository, install nodejs and bower and on the root of the repository run this command:
+
+    bower install
+    
+Then run one of the maven commands bellow. 
 
 ### How to run the project against a non-in-memory database ###
 
