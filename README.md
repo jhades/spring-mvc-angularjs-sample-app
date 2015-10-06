@@ -7,7 +7,7 @@ A sample project to demonstrate how a web app can be built using a Spring MVC / 
 The following dependencies are necessary: 
 
  - Java 8
- - Node 0.10
+ - NodeJs 0.12 or higher
  - bower
  - maven 3
 
