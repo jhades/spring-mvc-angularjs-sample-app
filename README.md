@@ -102,7 +102,7 @@ Clone this repository, install nodejs and bower and on the root of the repositor
     
 Then run one of the maven commands bellow. 
 
-### How to run the project against a PostgreSQl database ###
+### How to run the project against a PostgreSQL database ###
 
 This command starts the application with a local postgresql database:
 
